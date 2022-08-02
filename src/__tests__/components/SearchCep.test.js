@@ -5,9 +5,9 @@ import api from '../../services';
 
 const apiMock = new MockAdapter(api)
 
-const mockhandleSearch = jest.fn()
-const mocksetCeptNumber = jest.fn()
-const mockCepNumber = "17067640"
+const mockSearch = jest.fn()
+const mocksetCep = jest.fn()
+const mockCep = "17067640"
 const mockCeps = {
   cep: "",
 }
@@ -15,9 +15,9 @@ const mockCeps = {
 jest.mock("./../../providers/CepProvider", () => {
   return {
     useLocateCep: () => ({
-      handleSearch: mockhandleSearch,
-      cepNumber: mockCepNumber,
-      setCepNumber: mocksetCeptNumber,
+      handleSearch: mockSearch,
+      cepNumber: mockCep,
+      setCepNumber: mocksetCep,
       ceps: mockCeps,
     }),
   }
